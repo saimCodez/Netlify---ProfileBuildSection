@@ -1,4 +1,4 @@
-import { MoveUpRight, Rocket } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { Buttons } from "./profiledata";
 import ContinueDeployButton from "../continue-deploy-button";
 
