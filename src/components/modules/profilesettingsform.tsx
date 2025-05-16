@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Netlifynicetomeetyou from "./netlifynicetomeetyou";
 import { Profilecard } from "./profilecard";
+import { Container } from "../Container";
+import ContinueDeployButton from "../continue-deploy-button";
 
 export const Profilesettings = () => {
   const [name, setName] = useState<string>("");
@@ -22,12 +24,12 @@ export const Profilesettings = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <div className="px-10">
+      <Container>
         <div className="netlify-logo w-50 my-10">
           <img src="/public/NetlifyLogo.png" alt="" />
         </div>
 
-        <div className="profile-Settings grid grid-cols-12 py-10">
+        <div className="profile-Settings flex flex-col lg:grid lg:grid-cols-12 lg:py-10">
           <Netlifynicetomeetyou
             cast={cast}
             handleNameChange={handleNameChange}
@@ -39,19 +41,23 @@ export const Profilesettings = () => {
             team={team}
             handleCastChange={handleCastChange}
           />
-
-          <Profilecard
-            values={{
-              cast,
-              name,
-              planning,
-              role,
-              site,
-              team,
-            }}
-          />
+          <div className="flex md:block flex-col-reverse">
+            <div className="md:hidden block">
+              <ContinueDeployButton />
+            </div>
+            <Profilecard
+              values={{
+                cast,
+                name,
+                planning,
+                role,
+                site,
+                team,
+              }}
+            />
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

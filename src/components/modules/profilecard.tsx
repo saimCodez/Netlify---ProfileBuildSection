@@ -15,16 +15,16 @@ export const Profilecard = ({
   values: { cast, name, role, planning, site, team },
 }: ProfileCardProps) => {
   return (
-    <div className="profile-Card col-span-4 block sticky top-10 shadow shadow-md  h-165  border border-gray-400 rounded-xl">
+    <div className="profile-Card lg:col-span-4 md:mb-0 mb-10 xl:w-125  lg:w-83 block lg:sticky  top-10  shadow shadow-md  h-165  border border-gray-400 rounded-xl">
       <div className="card">
         <div
-          className={`h-38 ${
+          className={`h-38  rounded-t-xl ${
             planning
               ? "bg-gradient-to-r from-emerald-700 to-amber-300 rounded-t-xl"
               : "bg-gray-100"
           }`}
         >
-          <h1 className="text-4xl font-semibold text-white flex items-center py-14 pl-7">
+          <h1 className="text-4xl font-semibold text-white flex items-center py-14 pl-7 ">
             {team}
           </h1>
         </div>
@@ -35,7 +35,7 @@ export const Profilecard = ({
               {name} {cast}
             </p>
           </div>
-          <p className="font-semibold text-lg">saim.tauseef27@gmail.com</p>
+          {/* <p className="font-semibold text-lg">saim.tauseef27@gmail.com</p> */}
           {planning && (
             <div className="flex items-center gap-2 mt-4">
               <Laptop className="w-6 h-5" />
